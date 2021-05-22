@@ -12,7 +12,7 @@ model = pickle.load(open('SVM.pkl', 'rb'))
 def Home():
     return render_template('index.html')
 
-num_data = pd.read_csv("E:/End to end project/Telecom Churn Prediction/num_data.csv")
+num_data = pd.read_csv("num_data.csv")
 scaler = MinMaxScaler()
 @app.route("/predict", methods=['POST'])
 def predict():
