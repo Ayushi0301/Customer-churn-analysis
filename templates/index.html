@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:DarkCyan">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Customer Churn Analysis</h2>
+            
+			<h3>Senior Citizen</h3><br><select name="SeniorCitizen" id="second" required="required">
+				<option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+			<h3>Any Partner?</h3><br><select name="Partner" id="third" required="required">
+				<option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+			<h3>Dependents</h3><br><select name="Dependents" id="fourth" required="required">
+				<option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>		
+            <h3>No.of months customer has stayed with company</h3><br><input id="fifth" name="tenure" required="required">
+			
+			<h3>Use Internet service</h3><br><select name="InternetService" id="eighth" required="required">
+				<option value="Fiber optic">Fiber optic</option>
+                <option value="DSL">DSL</option>
+				<option value="No">No</option>
+			</select>
+			<h3>Use Online Security</h3><br><select name="OnlineSecurity" id="ninth" required="required">
+				<option value="Yes">Yes</option>
+                <option value="No">No</option>
+				
+			</select>
+			<h3>Online Backup</h3><br><select name="OnlineBackup" id="tenth" required="required">
+				<option value="Yes">Yes</option>
+                <option value="No">No</option>
+				
+			</select>
+			<h3>Device Protection</h3><br><select name="DeviceProtection" id="eleventh" required="required">
+				<option value="Yes">Yes</option>
+                <option value="No">No</option>
+				
+			</select>
+			<h3>Tech Support service</h3><br><select name="TechSupport" id="twelth" required="required">
+				<option value="Yes">Yes</option>
+                <option value="No">No</option>
+				
+			</select>
+			<h3>Use Streaming TV</h3><br><select name="StreamingTV" id="thirteenth" required="required">
+				<option value="Yes">Yes</option>
+                <option value="No">No</option>
+				
+			</select>
+			<h3>Use Streaming movies</h3><br><select name="StreamingMovies" id="fourteenth" required="required">
+				<option value="Yes">Yes</option>
+                <option value="No">No</option>
+				
+			</select>
+			<h3>Contract</h3><br><select name="Contract" id="fifteenth" required="required">
+				<option value="Month-to-month">Month-to-month</option>
+                <option value="One year">One year</option>
+				<option value="=Two year">Two year</option>
+			</select>
+			<h3>Use paperless billing</h3><br><select name="PaperlessBilling" id="sixteenth" required="required">
+				<option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+			<h3>Payment Method</h3><br><select name="PaymentMethod" id="seventeenth" required="required">
+				<option value="Electronic check">Electronic check</option>
+                <option value="Mailed check">Mailed check</option>
+				<option value="=Bank transfer (automatic)">Bank transfer (automatic)</option>
+				<option value="=Credit card (automatic)">Credit card (automatic)</option>
+			</select>	
+            <h3>Monthly charges (in $)</h3><input id="eighteenth" name="MonthlyCharges" required="required">
+			<h3>Total charges (in $)</h3><input id="nineteenth" name="TotalCharges" required="required">
+
+            <br><br><button id="sub" type="submit ">Calculate churn probability</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: Lavender;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #sub {
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            border-radius: 20px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #fifth {
+           
+            text-align: center;
+        }
+        
+        #eighteenth {
+            
+            text-align: center;
+        }
+        
+        
+        #nineteenth {
+           
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
